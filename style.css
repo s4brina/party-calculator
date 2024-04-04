@@ -1,0 +1,250 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap');
+
+.calculator {
+    width: 500px;
+    margin: 0;
+    padding: 30px;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    background-color: pink;
+    border-radius: 20px;
+    animation: rainbow-background 5s infinite;
+  }
+
+  @keyframes rainbow-background {
+    0% { background-color: red; }
+    16.7% { background-color: orange; }
+    33.3% { background-color: yellow; }
+    50% { background-color: green; }
+    66.7% { background-color: rgb(19, 208, 255); }
+    83.3% { background-color: rgb(165, 39, 255); }
+    100% { background-color: red; }
+  }
+  
+  .display {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    font-family: 'Press Start 2P';
+    height: 50px;
+    border: none;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+  
+  .buttons button {
+    padding: 10px;
+    font-size: 40px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Press Start 2P';
+    border: none;
+  }
+  
+  .history {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  #historyList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #historyList li {
+    margin-bottom: 5px;
+  }
+  
+  .history {
+    font-family: 'Press Start 2P';
+        font-weight: 500;
+        font-style: normal;
+        font-size: 20px;
+  }
+
+  h1 {
+    font-family: 'Press Start 2P';
+    font-size: 50px;
+    text-align: center;
+    animation: wavy 4s infinite;
+    margin-bottom: 50px;
+  }
+
+  @keyframes wavy {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-5px); }
+    50% { transform: translateY(3px); }
+    75% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+
+  .frenzy-mode .star {
+    animation: wavy 2s infinite; /* Adjust the duration as needed */
+  }
+
+  html {
+    padding: 1%;
+  }
+
+  #confetti-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  /* Confetti styling */
+.confetti {
+    width: 20px;
+    height: 30px;
+    background-color: #f00; /* You can change the color */
+    position: fixed;
+    animation: confetti-fall 2s ease-out;
+  }
+  
+  @keyframes confetti-fall {
+    0% { transform: translateY(-100vh) rotate(180deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+  }
+  
+  section {
+    padding-top: 1%;
+  }
+
+  
+  .falling-image {
+    max-width: 5%;
+    position: absolute;
+    animation: fall 5s linear infinite;
+  }
+  
+  @keyframes fall {
+    from {
+      top: -50px;
+      opacity: 0;
+      transform: rotate(0deg);
+    }
+    to {
+      top: 100vh;
+      opacity: 0.5;
+      transform: rotate(360deg);
+    }
+  }
+  
+  body {
+    overflow: hidden;
+  }
+  
+
+  .border {
+    display: flex;
+  }
+
+  section {
+    padding-left: 10%;
+  }
+
+  .lit {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px 12px;
+    padding-inline: 20px;
+    border-radius: 1000px;
+    font-size: 20px;
+    font-family: 'Press Start 2P';
+  }
+
+  .lit:hover {
+    background: linear-gradient(to right, red, orange, rgb(86, 86, 6), rgb(17, 82, 17), rgb(0, 9, 109), rgb(96, 8, 160), violet, red, orange);
+    background-size: 1000% 100%;
+    animation: rainbow 2s linear infinite;
+   
+  }
+
+  
+  @keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+
+.frenzy-mode {
+  background: linear-gradient(to right, red, orange, yellow, rgb(64, 255, 64), rgb(19, 208, 255), rgb(165, 39, 255), violet, red, orange);
+  background-size: 1000% 100%;
+  animation: rainbow 2s linear infinite;
+}
+
+
+
+
+  .star {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    animation: fall 2s infinite linear; /* Falling animation */
+  }
+  
+  @keyframes fall {
+    from {
+      transform: translateY(-100vh);
+    }
+    to {
+      transform: translateY(100vh);
+    }
+  }
+
+  .star {
+    font-size: 30px;
+  }
+
+  .minion {
+    max-width: 20%;
+  }
+  
+  .frenzy-hidden {
+    display: none; /* Initially hide the element */
+  }
+  
+  .frenzy-mode .minion {
+    display: inline; /* Show the element when frenzy mode is active */
+  }
+
+  .minion {
+    position: absolute;
+    bottom: 1%; /* Initial vertical position */
+    animation: rotateMinion 10s linear infinite; /* Animation for rotation */
+  }
+  
+  @keyframes rotateMinion {
+    0% {
+      transform: rotate(0deg); /* Start from 0 degrees rotation */
+      left: -200px; /* Start position off-screen */
+    }
+    100% {
+      transform: rotate(0deg); /* Rotate a full circle */
+      left: calc(100% + 100px); /* Move off-screen to the right */
+    }
+  }
+  
+  .info {
+    font-family: 'Anton';
+    font-size: 20px;
+    line-height: 18px;
+    letter-spacing: -0.8px;
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 9999; /* Ensure it's above other elements */
+}

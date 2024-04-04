@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Party Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="calculator.png"
+    />
+  </head>
+
+  
+
+  <div id="confetti-wrapper"></div>
+
+  <div id="falling-images"></div>
+  <body>
+    <button class="lit" onclick="toggleFrenzy()">Party<br> Mode</button>
+    <div class="info">sabrina<br>dragani</div>
+    <div class="border">
+<section>
+
+
+    <h1><br><b>Party<br> Calculator</b><br></h1>
+    <section></section>
+
+    <div class="calculator">
+      <input type="text" id="display" class="display" readonly />
+      <div class="buttons">
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="appendChar('%')">%</button>
+        <button onclick="appendChar('/')">/</button>
+        <button onclick="appendChar('*')">x</button>
+        <button onclick="appendChar('7')">7</button>
+        <button onclick="appendChar('8')">8</button>
+        <button onclick="appendChar('9')">9</button>
+        <button onclick="appendChar('-')">-</button>
+        <button onclick="appendChar('4')">4</button>
+        <button onclick="appendChar('5')">5</button>
+        <button onclick="appendChar('6')">6</button>
+        <button onclick="appendChar('+')">+</button>
+        <button onclick="appendChar('1')">1</button>
+        <button onclick="appendChar('2')">2</button>
+        <button onclick="appendChar('3')">3</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="appendChar('0')">0</button>
+        <button onclick="appendChar('.')">.</button>
+      </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="history" id="history">
+        <h2>History</h2>
+        <ul id="historyList"></ul>
+      </div>
+
+      <img src="minion.gif" class="minion frenzy-hidden">
+
+    </section>
+</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
